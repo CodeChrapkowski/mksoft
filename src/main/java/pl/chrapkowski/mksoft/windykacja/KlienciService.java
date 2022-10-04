@@ -31,7 +31,7 @@ public class KlienciService {
         return klienciRes;
     }
 
-    public Collection<KlienciResponse1> getKlient1(){
+    public Collection<KlienciResponse1> getKlientImie(){
         return klienciRepository.finfbyImie()
                 .stream()
                 .map(this::createKlienciResponse1)

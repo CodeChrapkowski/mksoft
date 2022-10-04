@@ -7,8 +7,6 @@ import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
 import java.util.Collection;
 
-import static org.springframework.data.jpa.domain.AbstractPersistable_.id;
-
 @RestController
 @RequestMapping("klienci")
 @RequiredArgsConstructor
@@ -24,8 +22,8 @@ public class KlienciController {
 
     @GetMapping("klient")
     @ResponseStatus(HttpStatus.OK)
-    public Collection<KlienciResponse1> getKlient1() {
-        return klienciService.getKlient1();
+    public Collection<KlienciResponse1> getKlientImie() {
+        return klienciService.getKlientImie();
     }
 
     @PostMapping
