@@ -15,23 +15,19 @@ public interface KlienciRepository extends JpaRepository<KlienciEntity, Long> {
 
     Optional<KlienciEntity> findById(long id);
 
-    //TODO zapytanie natyvne
-    @Query(
-            value = "SELECT* from klienci  where imie='ewa'", nativeQuery = true
-    )
-    List<KlienciEntity> findByAllImie();
+    KlienciEntity findByimie(String imie);
 
 
-
-
-    @Query(
-            value = "SELECT* from klienci  where imie= :imie or nazwisko=:imie or pesel=:imie", nativeQuery = true
+    /*@Query(
+            value = "SELECT* from klienci  where imie= :imie or nazwisko=:imie or pesel=:imie order by nazwisko", nativeQuery = true
     )
     List<KlienciEntity> podajImie(@Param("imie") String imie);
+    */
+
+    @Query(value = "SELECT* from klienci  where imie LIKE %:p1% or nazwisko LIKE %:p1% or pesel LIKE %:p1%  order by nazwisko", nativeQuery = true)
+    List<KlienciEntity> findKlient(@Param("p1") String p1);
 
 
-
-KlienciEntity findByimie(String imie);
 
 
 }
