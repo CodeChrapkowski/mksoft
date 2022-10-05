@@ -2,11 +2,9 @@ package pl.chrapkowski.mksoft.windykacja;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseStatus;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.Collection;
 
 @RestController
@@ -20,6 +18,12 @@ public class StopyProcentoweController {
     @ResponseStatus(HttpStatus.OK)
     public Collection<StopyProcentoweResponse> getStopyProcentowe() {
         return stopyProcentoweService.getStopyProcentowe();
+    }
+
+    @PostMapping
+    @ResponseStatus(HttpStatus.OK)
+    public void saveStopyProcentowe(@RequestBody @Valid StopyProcentoweRequest stopyProcentoweRequest) {
+        stopyProcentoweService.saveStopyProcentoweRequest(stopyProcentoweRequest);
     }
 
 

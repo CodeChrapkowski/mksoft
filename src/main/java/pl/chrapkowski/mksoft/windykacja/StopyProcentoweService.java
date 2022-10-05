@@ -3,6 +3,7 @@ package pl.chrapkowski.mksoft.windykacja;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDateTime;
 import java.util.Collection;
 import java.util.stream.Collectors;
 
@@ -21,11 +22,24 @@ public class StopyProcentoweService {
         return spResponse;
     }
 
-    public Collection<StopyProcentoweResponse> getStopyProcentowe(){
+    public Collection<StopyProcentoweResponse> getStopyProcentowe() {
         return stopyProcentoweRepository.findAll()
                 .stream()
                 .map(this::createStopyProcentoweResponse)
                 .collect(Collectors.toList());
+    }
+
+    private StopyProcentoweEntiti createStopyProcentoweEntity(StopyProcentoweRequest stopyProcentoweRequest) {
+        StopyProcentoweEntiti spEntity = new StopyProcentoweEntiti();
+        spEntity.setData(stopyProcentoweRequest.getData());
+        spEntity.setOpis(stopyProcentoweRequest.getOpis());
+        spEntity.setStopa(stopyProcentoweRequest.getStopa());
+        spEntity.setUtworzono(LocalDateTime.now());
+        return spEntity;
+    }
+
+    public void saveStopyProcentoweRequest(StopyProcentoweRequest stopyProcentoweRequest) {
+        stopyProcentoweRepository.save(createStopyProcentoweEntity(stopyProcentoweRequest));
     }
 
 }
