@@ -2,10 +2,13 @@ package pl.chrapkowski.mksoft.windykacja;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 
 import javax.transaction.Transactional;
 import java.time.LocalDateTime;
 import java.util.Collection;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service
@@ -41,6 +44,11 @@ public class StopyProcentoweService {
 
     public void saveStopyProcentoweRequest(StopyProcentoweRequest stopyProcentoweRequest) {
         stopyProcentoweRepository.save(createStopyProcentoweEntity(stopyProcentoweRequest));
+    }
+
+        //TODO Dokończyć updateStopyProcentowe
+    public void updateStopyProcentowe@PathVariable("id") Long id, @RequestBody StopyProcentoweUpdateRequest request){
+
     }
 
     @Transactional
