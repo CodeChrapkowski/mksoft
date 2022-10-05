@@ -4,6 +4,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
+import java.time.LocalDateTime;
 import java.util.Collection;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -29,12 +30,13 @@ public class KlienciService {
         klienciRes.setImie(klienciEntity.getImie());
         klienciRes.setNazwisko(klienciEntity.getNazwisko());
         klienciRes.setPesel(klienciEntity.getPesel());
+        klienciRes.setUtworzono(klienciEntity.getUtworzono());
         return klienciRes;
     }
 
-    public KlienciEntity getKlientByImie(String imie) {
+ /*   public KlienciEntity getKlientByImie(String imie) {
         return klienciRepository.findByimie(imie);
-    }
+    }*/
 
     public List<KlienciEntity> getImie(String p1) {
         return klienciRepository.findKlient(p1);
@@ -45,6 +47,7 @@ public class KlienciService {
         kl.setImie(klienciRequest.getImie());
         kl.setNazwisko(klienciRequest.getNazwisko());
         kl.setPesel(klienciRequest.getPesel());
+        kl.setUtworzono(LocalDateTime.now());
         return kl;
     }
 

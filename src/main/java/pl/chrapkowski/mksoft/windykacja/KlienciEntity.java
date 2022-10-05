@@ -10,6 +10,7 @@ import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "klienci")
@@ -22,12 +23,14 @@ public class KlienciEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @NotNull
+
     private String imie;
 
     private String nazwisko;
 
     private Long pesel;
+
+    private LocalDateTime utworzono;
 
 
 }
