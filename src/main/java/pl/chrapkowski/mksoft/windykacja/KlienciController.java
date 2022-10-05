@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 import java.util.Collection;
+import java.util.List;
 
 @RestController
 @RequestMapping("klienci")
@@ -20,10 +21,22 @@ public class KlienciController {
         return klienciService.getKlienci();
     }
 
-    @GetMapping("klient")
+    @GetMapping("{imie}")
     @ResponseStatus(HttpStatus.OK)
-    public Collection<KlienciResponse1> getKlientImie() {
-        return klienciService.getKlientImie();
+    public KlienciEntity getKlientByImie(@PathVariable String imie){
+        return klienciService.getKlientByImie(imie);
+    }
+
+    @GetMapping("ewa")
+    @ResponseStatus(HttpStatus.OK)
+    public List<KlienciEntity> getEwa() {
+        return klienciService.getEwa();
+    }
+
+    @GetMapping("podajImie/{imie}")
+    @ResponseStatus(HttpStatus.OK)
+    public List<KlienciEntity> getImie(@PathVariable String imie) {
+        return klienciService.getImie(imie);
     }
 
     @PostMapping

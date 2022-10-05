@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
 import java.util.Collection;
+import java.util.List;
 import java.util.stream.Collectors;
 
 import static org.springframework.data.jpa.domain.AbstractPersistable_.id;
@@ -30,14 +31,17 @@ public class KlienciService {
         klienciRes.setPesel(klienciEntity.getPesel());
         return klienciRes;
     }
-
-    public Collection<KlienciResponse1> getKlientImie(){
-        return klienciRepository.finfbyImie()
+/*
+    public Collection<KlienciResponse1> getKlientImie(String imie){
+        return klienciRepository.finfbyImie(imie)
                 .stream()
                 .map(this::createKlienciResponse1)
                 .collect(Collectors.toList());
-    }
 
+    }*/
+
+
+/*
     private KlienciResponse1 createKlienciResponse1(KlienciEntity klienciEntity) {
         KlienciResponse1 klienciRes1 = new KlienciResponse1();
 
@@ -45,7 +49,22 @@ public class KlienciService {
     //    klienciRes1.setNazwisko(klienciEntity.getNazwisko());
       //  klienciRes1.setPesel(klienciEntity.getPesel());
         return klienciRes1;
+    }*/
+
+    public KlienciEntity getKlientByImie(String imie){
+        return klienciRepository.findByimie(imie);
     }
+
+
+   public List<KlienciEntity> getEwa(){
+        return klienciRepository.findByAllImie();
+
+
+   }   public List<KlienciEntity> getImie(String imie){
+        return klienciRepository.podajImie(imie);
+   }
+
+
     private KlienciEntity createKlientEntity(KlienciRequest klienciRequest){
         KlienciEntity kl = new KlienciEntity();
         kl.setImie(klienciRequest.getImie());
