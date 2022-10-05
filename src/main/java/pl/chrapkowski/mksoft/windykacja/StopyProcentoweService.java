@@ -3,6 +3,7 @@ package pl.chrapkowski.mksoft.windykacja;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
 import java.time.LocalDateTime;
 import java.util.Collection;
 import java.util.stream.Collectors;
@@ -42,4 +43,10 @@ public class StopyProcentoweService {
         stopyProcentoweRepository.save(createStopyProcentoweEntity(stopyProcentoweRequest));
     }
 
+    @Transactional
+    public void deleteStopyProcentowe(long id) {
+        stopyProcentoweRepository
+                .findById(id)
+                .ifPresent(stopyProcentoweRepository::delete);
+    }
 }

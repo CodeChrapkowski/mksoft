@@ -26,5 +26,9 @@ public class StopyProcentoweController {
         stopyProcentoweService.saveStopyProcentoweRequest(stopyProcentoweRequest);
     }
 
-
+    @DeleteMapping("{id}")
+    @ResponseStatus(HttpStatus.OK)
+    public void deleteStopyProcentowe(@PathVariable("id") Long id) {
+        stopyProcentoweService.deleteStopyProcentowe(id);
+    }
 }
