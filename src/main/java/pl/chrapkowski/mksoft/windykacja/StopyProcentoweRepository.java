@@ -6,8 +6,8 @@ import org.springframework.stereotype.Repository;
 import java.util.Optional;
 
 @Repository
-public interface StopyProcentoweRepository extends JpaRepository<StopyProcentoweEntiti, Long> {
+public interface StopyProcentoweRepository extends JpaRepository<StopyProcentoweEntity, Long> {
 
-    Optional<StopyProcentoweEntiti> findById(long id);
+    Optional<StopyProcentoweEntity> findById(long id);
 
 }

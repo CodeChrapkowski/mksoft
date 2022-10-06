@@ -25,6 +25,11 @@ public class StopyProcentoweController {
     public void saveStopyProcentowe(@RequestBody @Valid StopyProcentoweRequest stopyProcentoweRequest) {
         stopyProcentoweService.saveStopyProcentoweRequest(stopyProcentoweRequest);
     }
+    @PatchMapping("{id}")
+    @ResponseStatus(HttpStatus.OK)
+    public StopyProcentoweEntity updateStopyProcentowe(@RequestBody StopyProcentoweEntity stopyProcentoweEntity){
+        return stopyProcentoweService.updateStopyProcentowe(stopyProcentoweEntity);
+    }
 
     @DeleteMapping("{id}")
     @ResponseStatus(HttpStatus.OK)

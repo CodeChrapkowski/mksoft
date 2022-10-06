@@ -14,7 +14,7 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
-public class StopyProcentoweEntiti {
+public class StopyProcentoweEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
