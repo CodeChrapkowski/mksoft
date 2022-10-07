@@ -9,8 +9,6 @@ import java.util.Collection;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import static org.springframework.data.jpa.domain.AbstractPersistable_.id;
-
 @Service
 @RequiredArgsConstructor
 public class KlienciService {
@@ -54,6 +52,17 @@ public class KlienciService {
     public void saveKlient(KlienciRequest klienciRequest) {
         klienciRepository.save(createKlientEntity(klienciRequest));
     }
+
+    //TODO Update Klient
+
+    public KlienciEntity updateKlienci(KlienciUpdateRequest klienciUpdateRequest){
+        KlienciEntity existingKlientEntity = klienciRepository.findById(klienciUpdateRequest.getId()).orElse(null);
+        existingKlientEntity.setImie(klienciUpdateRequest.getImie());
+        existingKlientEntity.setNazwisko(klienciUpdateRequest.getNazwisko());
+     //  existingKlientEntity.setPesel(klienciUpdateRequest.getPesel());
+       return klienciRepository.save(existingKlientEntity);
+    }
+
 
     @Transactional
     public void deleteKlient(long id) {

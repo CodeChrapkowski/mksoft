@@ -27,6 +27,13 @@ public class KlienciController {
         return klienciService.getImie(p1);
     }
 
+    @PatchMapping("{id}")
+    @ResponseStatus(HttpStatus.OK)
+    public KlienciEntity updateKlienci(@RequestBody KlienciUpdateRequest klienciUpdateRequest) {
+        return klienciService.updateKlienci(klienciUpdateRequest);
+
+    }
+
     @PostMapping
     @ResponseStatus(HttpStatus.OK)
     public void saveKlient(@RequestBody @Valid KlienciRequest klientRequest) {

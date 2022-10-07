@@ -43,8 +43,6 @@ public class StopyProcentoweService {
         stopyProcentoweRepository.save(createStopyProcentoweEntity(stopyProcentoweRequest));
     }
 
-    //TODO Dokończyć updateStopyProcentowe
-
     public StopyProcentoweEntity updateStopyProcentowe(StopyProcentoweEntity stopyProcentoweEntity) {
         StopyProcentoweEntity existingStopyProcentoweEntity = stopyProcentoweRepository.findById(stopyProcentoweEntity.getId()).orElse(null);
         existingStopyProcentoweEntity.setData(stopyProcentoweEntity.getData());
