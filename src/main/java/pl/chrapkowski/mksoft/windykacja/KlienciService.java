@@ -53,13 +53,13 @@ public class KlienciService {
         klienciRepository.save(createKlientEntity(klienciRequest));
     }
 
-    //TODO Update Klient
+
 
     public KlienciEntity updateKlienci(KlienciUpdateRequest klienciUpdateRequest){
         KlienciEntity existingKlientEntity = klienciRepository.findById(klienciUpdateRequest.getId()).orElse(null);
         existingKlientEntity.setImie(klienciUpdateRequest.getImie());
         existingKlientEntity.setNazwisko(klienciUpdateRequest.getNazwisko());
-     //  existingKlientEntity.setPesel(klienciUpdateRequest.getPesel());
+        existingKlientEntity.setPesel(klienciUpdateRequest.getPesel());
        return klienciRepository.save(existingKlientEntity);
     }
 
