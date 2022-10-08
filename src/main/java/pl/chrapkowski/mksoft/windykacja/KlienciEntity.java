@@ -11,6 +11,7 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Entity
 @Table(name = "klienci")
@@ -32,5 +33,7 @@ public class KlienciEntity {
 
     private LocalDateTime utworzono;
 
+    @OneToMany(mappedBy = "klient")
+    private List<SprawyEntity> sprawyEntityList;
 
 }

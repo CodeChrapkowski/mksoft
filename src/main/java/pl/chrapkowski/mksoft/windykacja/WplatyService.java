@@ -12,6 +12,7 @@ public class WplatyService {
 
     private final WplatyRepository wplatyRepository;
 
+
     private WplatyResponse createWplatyResponse(WplatyEntity wplatyEntity){
         WplatyResponse wResponse = new WplatyResponse();
         wResponse.setId(wplatyEntity.getId());
@@ -19,6 +20,8 @@ public class WplatyService {
         wResponse.setKowta(wplatyEntity.getKowta());
         wResponse.setOdsetki(wplatyEntity.getOdsetki());
         wResponse.setUtworzono(wplatyEntity.getUtworzono());
+        wResponse.setNr_sprawy(wplatyEntity.getSprawa().getNr_sprawy());
+        wResponse.setNazwisko(wplatyEntity.getSprawa().getKlient().getNazwisko());
         return wResponse;
     }
 

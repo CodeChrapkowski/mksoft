@@ -23,5 +23,6 @@ public class WplatyEntity {
     private Double odsetki;
     private LocalDateTime utworzono;
 
-
+    @ManyToOne
+    private SprawyEntity sprawa;
 }

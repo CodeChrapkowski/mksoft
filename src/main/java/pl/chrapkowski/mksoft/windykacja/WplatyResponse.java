@@ -12,6 +12,8 @@ public class WplatyResponse {
     private LocalDate data_wplaty;
     private Double kowta;
     private Double odsetki;
+    private Short nr_sprawy;
+    private String nazwisko;
     private LocalDateTime utworzono;
 
 }
