@@ -19,9 +19,6 @@ public interface KlienciRepository extends JpaRepository<KlienciEntity, Long> {
     KlienciEntity findByimie(String imie);
 
 
-
-
-
     /*@Query(
             value = "SELECT* from klienci  where imie= :imie or nazwisko=:imie or pesel=:imie order by nazwisko", nativeQuery = true
     )

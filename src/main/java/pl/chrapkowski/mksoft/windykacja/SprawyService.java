@@ -37,8 +37,10 @@ public class SprawyService {
 
     private SprawyEntity createSprawyEntity(SprawyRequest sprawyRequest) {
         SprawyEntity sEntity = new SprawyEntity();
-        //TODO nie działa zapytanie wyszukujące id klienta
+        //TODO nie działa poniższe zapytanie wyszukujące id klienta
       //  sEntity.setKlient(klienciRepository.findById(sprawyRequest.getKlient().getId()));
+        //TODO v2 zamieniłem na poniższe
+        sEntity.setKlient(sprawyRequest.getKlient());
         sEntity.setKwota_zadluzenia(sprawyRequest.getKwota_zadluzenia());
         sEntity.setTermin_zaplaty(sprawyRequest.getTermin_zaplaty());
         sEntity.setNr_sprawy(sprawyRequest.getNr_sprawy());

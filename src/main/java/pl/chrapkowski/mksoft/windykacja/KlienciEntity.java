@@ -24,17 +24,15 @@ public class KlienciEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
-
     private String imie;
-
     private String nazwisko;
-
     private Long pesel;
-
     private LocalDateTime utworzono;
 
+    //TODO v2 zakomentowałem poniższe - nie wiem czy jest potrzebne
+/*
     @OneToMany(mappedBy = "klient")
     private  List<SprawyEntity> sprawyEntityList;
+*/
 
 }
