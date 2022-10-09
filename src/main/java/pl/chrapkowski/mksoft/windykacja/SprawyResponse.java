@@ -9,7 +9,6 @@ import java.time.LocalDateTime;
 public class SprawyResponse {
 
     private Long id;
-    private KlienciEntity klient;
     private String nazwisko_klient;
     private Double kwota_zadluzenia;
     private LocalDate termin_zaplaty;

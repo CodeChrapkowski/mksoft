@@ -4,6 +4,7 @@ import lombok.Data;
 
 
 import java.time.LocalDate;
+import java.util.List;
 
 
 @Data
@@ -15,6 +16,7 @@ public class SprawyRequest {
     private Short nr_sprawy;
     private Short rok;
     private String opis;
+
 
 }
 
