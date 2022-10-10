@@ -63,7 +63,6 @@ public class KlienciService {
        return klienciRepository.save(existingKlientEntity);
     }
 
-
     @Transactional
     public void deleteKlient(long id) {
         klienciRepository

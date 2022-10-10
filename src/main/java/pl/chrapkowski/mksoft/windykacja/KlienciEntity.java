@@ -11,6 +11,7 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -30,9 +31,7 @@ public class KlienciEntity {
     private LocalDateTime utworzono;
 
     //TODO v2 zakomentowałem poniższe - nie wiem czy jest potrzebne
-/*
     @OneToMany(mappedBy = "klient")
     private  List<SprawyEntity> sprawyEntityList;
-*/
 
 }

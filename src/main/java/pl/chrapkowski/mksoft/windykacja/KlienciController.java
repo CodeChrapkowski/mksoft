@@ -31,7 +31,6 @@ public class KlienciController {
     @ResponseStatus(HttpStatus.OK)
     public KlienciEntity updateKlienci(@RequestBody KlienciUpdateRequest klienciUpdateRequest) {
         return klienciService.updateKlienci(klienciUpdateRequest);
-
     }
 
     @PostMapping
@@ -40,11 +39,9 @@ public class KlienciController {
         klienciService.saveKlient(klientRequest);
     }
 
-
     @DeleteMapping("{id}")
     @ResponseStatus(HttpStatus.OK)
     public void deleteklient(@PathVariable("id") Long id) {
         klienciService.deleteKlient(id);
     }
-
 }
