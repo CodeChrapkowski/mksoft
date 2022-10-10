@@ -5,6 +5,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.time.LocalDateTime;
 
 
 @Entity
@@ -19,5 +20,6 @@ public class KontrahenciEntity {
     private Long id;
     private String nazwa;
     private Integer konto;
+    private LocalDateTime utworzono;
 
 }
