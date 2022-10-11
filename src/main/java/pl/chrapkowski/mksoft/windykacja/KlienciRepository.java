@@ -14,9 +14,10 @@ import java.util.Optional;
 public interface KlienciRepository extends JpaRepository<KlienciEntity, Long> {
 
 
-    Optional<KlienciEntity> findById(long id);
+   // Optional<KlienciEntity> findByIimie2(String imie);
 
     KlienciEntity findByimie(String imie);
+
 
 
     /*@Query(

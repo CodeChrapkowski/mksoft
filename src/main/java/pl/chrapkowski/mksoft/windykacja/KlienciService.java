@@ -32,9 +32,9 @@ public class KlienciService {
         return klienciRes;
     }
 
-    public KlienciEntity getKlientByImie(String imie) {
+ /*   public KlienciEntity getKlientByImie(String imie) {
         return klienciRepository.findByimie(imie);
-    }
+    }*/
 
     public List<KlienciEntity> getImie(String p1) {
         return klienciRepository.findKlient(p1);

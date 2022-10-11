@@ -8,6 +8,7 @@ import javax.validation.Valid;
 import java.util.Collection;
 import java.util.List;
 
+@CrossOrigin
 @RestController
 @RequestMapping("klienci")
 @RequiredArgsConstructor

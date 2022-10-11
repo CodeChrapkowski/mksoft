@@ -2,6 +2,7 @@ package pl.chrapkowski.mksoft.windykacja;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.PathVariable;
 
 import java.time.LocalDateTime;
 import java.util.Collection;
@@ -37,10 +38,7 @@ public class SprawyService {
 
     private SprawyEntity createSprawyEntity(SprawyRequest sprawyRequest) {
         SprawyEntity sEntity = new SprawyEntity();
-        //TODO nie działa poniższe zapytanie wyszukujące id klienta
-      //  sEntity.setKlient(klienciRepository.findById(sprawyRequest.getKlient().getId()));
-        //TODO v2 zamieniłem na poniższe
-        sEntity.setKlient(sprawyRequest.getKlient());
+        sEntity.setKlient(klienciRepository.findById(sprawyRequest.getKlient()).orElseThrow(() -> new RuntimeException("Klient nie istnieje")));
         sEntity.setKwota_zadluzenia(sprawyRequest.getKwota_zadluzenia());
         sEntity.setTermin_zaplaty(sprawyRequest.getTermin_zaplaty());
         sEntity.setNr_sprawy(sprawyRequest.getNr_sprawy());
