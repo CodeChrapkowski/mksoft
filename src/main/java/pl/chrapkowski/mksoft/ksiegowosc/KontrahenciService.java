@@ -14,7 +14,7 @@ public class KontrahenciService {
 
     private KontrahenciResponse createKontrachenciResponse(KontrahenciEntity kontrahenciEntity){
         KontrahenciResponse konResponse =new KontrahenciResponse();
-        konResponse.setId(konResponse.getId());
+        konResponse.setId(kontrahenciEntity.getId());
         konResponse.setNazwa(kontrahenciEntity.getNazwa());
         konResponse.setKonto(kontrahenciEntity.getKonto());
         konResponse.setUtworzono(kontrahenciEntity.getUtworzono());

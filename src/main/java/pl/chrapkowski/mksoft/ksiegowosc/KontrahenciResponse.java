@@ -11,4 +11,5 @@ public class KontrahenciResponse {
     private String nazwa;
     private Integer konto;
     private LocalDateTime utworzono;
+
 }
